@@ -21,7 +21,7 @@ body {
 
 .navbar-brand,
 .nav-link {
-    color: #FFEBD4 !important;
+    color: #A67C52 !important;
 }
 
 .nav-link:hover {
@@ -193,6 +193,33 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
     opacity: 0.7;
+}
+
+/* Thank You Page */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #A67C52 !important;
+}
+
+.thank-you-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    margin-top: auto;
 }
 
 @media (max-width: 768px) {
