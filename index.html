@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <style>
         body {
@@ -30,6 +31,11 @@
         .navbar-brand,
         .nav-link {
             color: #FFEBD4 !important;
+        }
+
+        .nav-link:hover {
+            color: #A67C52 !important;
+            transition: color 0.3s ease;
         }
 
         .nav-link.active {
@@ -61,6 +67,153 @@
 
         .hero .btn {
             background-color: #FFEBD4 !important;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #A67C52 !important;
+        }
+
+        #services {
+            min-height: 100vh;
+            padding: 80px 0;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+        }
+
+        #services h2 {
+            text-align: center;
+            font-family: 'Handlee', cursive;
+            color: #3B2F2F;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .service-card .card-body {
+            padding: 1rem;
+        }
+
+        .service-card .card-title {
+            color: #3B2F2F;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .service-card .card-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        #wellness-testimonials {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        #wellness-testimonials h3 {
+            font-family: 'Handlee', cursive;
+            color: #3B2F2F;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #wellness-testimonials .wellness-tips p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        #wellness-testimonials ul {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+
+        #wellness-testimonials li {
+            color: #3B2F2F;
+            margin-bottom: 0.75rem;
+        }
+
+        .testimonial-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .testimonial-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-item p {
+            color: #3B2F2F;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .testimonial-item .client-name {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: normal;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background-color: #A67C52;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            footer .social-icons a {
+                margin: 0 0.1rem;
+            }
         }
 
     </style>
@@ -68,7 +221,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="assets/images/logo.png" alt="Seven Seas Spa logo" width="30" height="30" class="me-2">
                 <span>Seven Seas Spa</span>
@@ -102,6 +255,118 @@
             <a href="#contact" class="btn btn-light btn-lg">Contact Us</a>
         </div>
     </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card service-card">
+                        <img src="assets/images/yoga.png" class="card-img-top" alt="Yoga">
+                        <div class="card-body">
+                            <h5 class="card-title">Yoga Sessions</h5>
+                            <p class="card-text">Experience inner peace and physical wellness through our guided yoga classes. Perfect for all skill levels, from beginners to advanced practitioners.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card service-card">
+                        <img src="assets/images/nutrition.png" class="card-img-top" alt="Nutrition">
+                        <div class="card-body">
+                            <h5 class="card-title">Nutrition Counseling</h5>
+                            <p class="card-text">Get personalized nutrition plans tailored to your health goals. Our experts help you develop sustainable eating habits for long-term wellness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card service-card">
+                        <img src="assets/images/mental-support.png" class="card-img-top" alt="Mental Support">
+                        <div class="card-body">
+                            <h5 class="card-title">Mental Support</h5>
+                            <p class="card-text">Access professional counseling and mindfulness training for mental clarity. We provide a safe space to address stress, anxiety, and emotional well-being.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card service-card">
+                        <img src="assets/images/wellness-programs.png" class="card-img-top" alt="Wellness Programs">
+                        <div class="card-body">
+                            <h5 class="card-title">Wellness Programs</h5>
+                            <p class="card-text">Join our comprehensive wellness programs designed for holistic health. Combine fitness, nutrition, and mindfulness for complete transformation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wellness-testimonials">
+        <div class="container">
+            <div class="wellness-tips">
+                <h3>Wellness Tips</h3>
+                <p>Incorporate these simple yet powerful wellness practices into your daily routine for a healthier, more balanced life.</p>
+                <ul>
+                    <li><strong>Meditation:</strong> Start your day with 10 minutes of meditation or deep breathing to reduce stress and improve mental clarity.</li>
+                    <li><strong>Hydration:</strong> Stay hydrated by drinking at least 8 glasses of water throughout the day to support optimal body function.</li>
+                    <li><strong>Physical Activity:</strong> Incorporate 30 minutes of physical activity daily, whether it's yoga, walking, or strength training.</li>
+                    <li><strong>Quality Sleep:</strong> Prioritize quality sleep by maintaining a consistent bedtime routine and aiming for 7-9 hours per night.</li>
+                    <li><strong>Mindful Eating:</strong> Practice mindful eating by choosing whole, nutrient-rich foods and paying attention to your body's hunger cues.</li>
+                </ul>
+            </div>
+            <div class="testimonials-section mt-5">
+                <h3>Testimonials</h3>
+                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-item">
+                                <img src="assets/images/testimonial-1.png" alt="Client 1">
+                                <p>"Seven Seas Spa transformed my life with their holistic approach to wellness and incredible support."</p>
+                                <div class="client-name">- Michael Johnson</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-item">
+                                <img src="assets/images/testimonial-2.png" alt="Client 2">
+                                <p>"The yoga sessions and nutrition counseling have helped me achieve balance in my busy lifestyle."</p>
+                                <div class="client-name">- Sarah Chen</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-item">
+                                <img src="assets/images/testimonial-3.png" alt="Client 3">
+                                <p>"I found peace and renewed energy through their wellness programs. Highly recommend to everyone!"</p>
+                                <div class="client-name">- Emily Rodriguez</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    &copy;2026 Seven Seas Spa
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
